@@ -38,6 +38,12 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 
 ### setup.sh
 
+#### Установка
+
+```
+wget https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/setup.sh
+```
+
 #### Инструкция по использованию:
 Сохраните этот скрипт как setup.sh
 
