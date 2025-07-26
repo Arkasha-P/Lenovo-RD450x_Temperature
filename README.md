@@ -41,23 +41,12 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 #### Установка
 
 ```
-wget https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/setup.sh
+wget https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/setup.sh | bash setup.sh
 ```
 
 #### Инструкция по использованию:
-Сохраните этот скрипт как setup.sh
 
-Дайте права на выполнение:
-
-```
-chmod +x setup.sh
-```
-Запустите с правами root:
-```
-sudo ./setup.sh
-```
 Что делает скрипт:
-- Устанавливает необходимые пакеты (ipmitool)
 - Скачивает основной скрипт мониторинга с GitHub
 - Создает systemd службу с автозапуском
 - Настраивает логирование в /var/log/cpu_temp_monitor.log
