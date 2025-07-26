@@ -1,16 +1,16 @@
 # Lenovo-RD450x_Temperature
-Скрипт для управления кулерами материнской платы Lenovo RD450x на основе температур процессоров.
+Скрипт для управления кулерами материнской платы Lenovo RD450x на основе температуры процессоров.
 
 
-### install.sh
+## install.sh
 
-#### Установка
+### Установка
 
 ```
 wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/install.sh | bash
 ```
 
-#### Инструкция по использованию:
+### Инструкция по использованию:
 
 Что делает скрипт:
 - Скачивает основной скрипт мониторинга с GitHub
@@ -27,20 +27,32 @@ wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/
 
 `sudo systemctl restart cpu_temp_monitor` - перезапуск службы
 
+### Удаление
+```
+wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/uninstall.sh | bash
+```
 
-### temp_cpu.sh
+## temp_cpu.sh
 
 Скрипт мониторит температуру процессоров. При достижении высоких пороговых значений (настраивается вручную) включается турбо-режим.
 Турбо-режим переводит все кулеры в состояние максимальных оборотов на всей плате. После достижения низких пороговых значений турбо-режим выключается.
 
-Запускается командой `bash temp_cpu.sh &` - запуск в фоне
-Мониторинг лога `tail -f /var/log/cpu_temp_monitor.log`
+### Редактирование
+Редактируется скрипт по пути `/usr/local/bin/cpu_temp_monitor.sh`
 
 ```
 HIGH_TEMP=50 # Порог включения усиленного охлаждения
 LOW_TEMP=40 # Порог отключения усиленного охлаждения
 CHECK_INTERVAL=5 # Интервал проверки (секунд)
 ```
+
+После редактирования нужно перезапустить службу 
+
+```
+systemctl restart cpu_temp_monitor
+```
+
+
 
 
 ### Преимущества скрипта
@@ -51,7 +63,7 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 - пишет лог `/var/log/cpu_temp_monitor.log`, который удобно просматривать через `tail -f /var/log/cpu_temp_monitor.log`
 
 
-### cpu_strees.sh
+## cpu_strees.sh
 
 Скрипт нагрузки CPU для проверки работоспособности охлаждения.
 
@@ -62,8 +74,3 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 `(bash cpu_strees.sh &) && sleep $((60 * 10)) && killall 'cpu_strees.sh'` - запускает стрес тест на 10 минут и заканчивает.
 
 Останавливать CTRL + C или `killall 'cpu_strees.sh'`
-
-### Удаление
-```
-wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/uninstall.sh | bash
-```
