@@ -64,5 +64,6 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 Останавливать CTRL + C или `killall 'cpu_strees.sh'`
 
 ### Удаление
-
+```
 wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/uninstall.sh | bash
+```
