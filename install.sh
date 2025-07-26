@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Конфигурация
-SCRIPT_NAME="temp_cpu.sh"
+SCRIPT_NAME="cpu_temp_monitor.sh"
 SERVICE_NAME="cpu_temp_monitor"
-GITHUB_RAW_URL="https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/main/temp_cpu.sh"
+GITHUB_RAW_URL="https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/main/cpu_temp_monitor.sh"
 INSTALL_DIR="/usr/local/bin"
 LOG_DIR="/var/log"
 SERVICE_DIR="/etc/systemd/system"
