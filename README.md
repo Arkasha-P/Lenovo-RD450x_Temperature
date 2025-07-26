@@ -59,8 +59,9 @@ sudo ./setup.sh
 - Запускает службу и проверяет её статус
 
 После установки вы можете использовать:
-tempmon - просмотр логов в реальном времени
 
-sudo systemctl status cpu_temp_monitor - проверка статуса службы
+`tempmon` - просмотр логов в реальном времени
 
-sudo systemctl restart cpu_temp_monitor - перезапуск службы
+`sudo systemctl status cpu_temp_monitor` - проверка статуса службы
+
+`sudo systemctl restart cpu_temp_monitor` - перезапуск службы
