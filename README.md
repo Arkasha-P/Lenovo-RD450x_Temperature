@@ -62,3 +62,7 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 `(bash cpu_strees.sh &) && sleep $((60 * 10)) && killall 'cpu_strees.sh'` - запускает стрес тест на 10 минут и заканчивает.
 
 Останавливать CTRL + C или `killall 'cpu_strees.sh'`
+
+### Удаление
+
+wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/uninstall.sh | bash
