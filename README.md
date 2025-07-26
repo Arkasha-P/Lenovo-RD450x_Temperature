@@ -1,6 +1,33 @@
 # Lenovo-RD450x_Temperature
 Скрипт для управления кулерами материнской платы Lenovo RD450x на основе температур процессоров.
 
+
+### install.sh
+
+#### Установка
+
+```
+wget -qO- https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/install.sh | bash
+```
+
+#### Инструкция по использованию:
+
+Что делает скрипт:
+- Скачивает основной скрипт мониторинга с GitHub
+- Создает systemd службу с автозапуском
+- Настраивает логирование в /var/log/cpu_temp_monitor.log
+- Добавляет алиас tempmon для просмотра логов
+- Запускает службу и проверяет её статус
+
+После установки вы можете использовать:
+
+`tempmon` - просмотр логов в реальном времени
+
+`sudo systemctl status cpu_temp_monitor` - проверка статуса службы
+
+`sudo systemctl restart cpu_temp_monitor` - перезапуск службы
+
+
 ### temp_cpu.sh
 
 Скрипт мониторит температуру процессоров. При достижении высоких пороговых значений (настраивается вручную) включается турбо-режим.
@@ -35,28 +62,3 @@ CHECK_INTERVAL=5 # Интервал проверки (секунд)
 `(bash cpu_strees.sh &) && sleep $((60 * 10)) && killall 'cpu_strees.sh'` - запускает стрес тест на 10 минут и заканчивает.
 
 Останавливать CTRL + C или `killall 'cpu_strees.sh'`
-
-### setup.sh
-
-#### Установка
-
-```
-wget https://raw.githubusercontent.com/Arkasha-P/Lenovo-RD450x_Temperature/refs/heads/main/setup.sh
-```
-
-#### Инструкция по использованию:
-
-Что делает скрипт:
-- Скачивает основной скрипт мониторинга с GitHub
-- Создает systemd службу с автозапуском
-- Настраивает логирование в /var/log/cpu_temp_monitor.log
-- Добавляет алиас tempmon для просмотра логов
-- Запускает службу и проверяет её статус
-
-После установки вы можете использовать:
-
-`tempmon` - просмотр логов в реальном времени
-
-`sudo systemctl status cpu_temp_monitor` - проверка статуса службы
-
-`sudo systemctl restart cpu_temp_monitor` - перезапуск службы
