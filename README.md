@@ -69,6 +69,6 @@ systemctl restart cpu_temp_monitor
 
 Запускать `bash cpu_strees.sh` или 
 
-`(bash cpu_strees.sh &) && sleep $((60 * 10)) && killall 'cpu_strees.sh'` - запускает стрес тест на 10 минут и заканчивает.
+`(bash cpu_strees.sh &) && sleep $((60 * 10)) && pkill -f 'bash cpu_strees.sh'` - запускает стрес тест на 10 минут и заканчивает.
 
 Останавливать CTRL + C или `killall 'cpu_strees.sh'`
